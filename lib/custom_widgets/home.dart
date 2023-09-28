@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/Controller/home_controller.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -15,7 +16,30 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Obx(
+              () => Text(
+                "The value is ${Get.find<HomeController>().count}",
+                style: const TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.find<HomeController>().increment();
+              },
+              child: const Text(
+                "Increment",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            /* const Text(
               "This is Home Screen",
               style: TextStyle(
                 color: Colors.purpleAccent,
@@ -27,9 +51,9 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                /*Get.toNamed(
+                */ /*Get.toNamed(
                   "/nextScreen",
-                );*/
+                );*/ /*
                 Get.toNamed(
                   "/nextScreen/1324",
                 );
@@ -47,17 +71,12 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(
               height: 8,
-            ),
+            ),*/
             ElevatedButton(
               onPressed: () {
                 // Get.back();
-                Get.back(
-                  result: "This is from home screen",
-                );
+                Get.back();
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightBlue,
-              ),
               child: const Text(
                 "Back to Main",
                 style: TextStyle(
@@ -66,9 +85,9 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
+            /* const SizedBox(
               height: 8,
-            ),
+            ),*/
             /*Text(
               "${Get.arguments}",
               style: const TextStyle(
@@ -76,13 +95,13 @@ class Home extends StatelessWidget {
                 fontSize: 20,
               ),
             ),*/
-            // Text(
-            //   "Channel name is ${Get.parameters['channel']} and content is ${Get.parameters['content']}",
-            //   style: const TextStyle(
-            //     color: Colors.red,
-            //     fontSize: 30,
-            //   ),
-            // ),
+            /*Text(
+              "Channel name is ${Get.parameters['channel']} and content is ${Get.parameters['content']}",
+              style: const TextStyle(
+                color: Colors.red,
+                fontSize: 30,
+              ),
+            ),*/
           ],
         ),
       ),

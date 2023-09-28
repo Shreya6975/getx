@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/home.dart';
-import 'package:getx/unknown_routes.dart';
-import 'next_screen.dart';
+import '../custom_widgets/home.dart';
+import '../custom_widgets/next_screen.dart';
+import '../custom_widgets/unknown_routes.dart';
 
 void main() {
   runApp(const MyApp());
