@@ -16,7 +16,7 @@ class ProductController extends GetxController {
   Future<void> fetchProducts() async {
     try {
       isLoading(true);
-      var products = await ApiService.fetchProducts();
+      var products = await ApiService().fetchProducts();
       productList.assignAll(products);
     } finally {
       isLoading(false);
