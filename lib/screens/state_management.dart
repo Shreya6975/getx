@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   // final student = Student(name: "tom", age: 26).obs;
 
-  // MyController myController = Get.put(MyController());
+  MyController myController = Get.put(MyController());
 
   // This widget is the root of your application.
   @override
